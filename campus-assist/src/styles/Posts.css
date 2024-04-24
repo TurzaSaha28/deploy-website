@@ -1,149 +1,182 @@
 /* Posts.css */
 
 /* Search bar styles */
-.search-bar {
-  width: 20%;
-  padding: 10px;
+.post-search-bar {
+  width: 50%;
+  padding: 15px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-left: 40%;
+  border-radius: 15px;
+  margin-left: 25%;
   margin-bottom: 20px;
-  font-size: 14px;
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
-  color: rgba(255, 255, 255, 0.596); /* Smoky white color with opacity */
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  font-size: 20px;
+  box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.596);
+  background-color: rgb(88, 87, 87);
 }
 
-.search-bar::placeholder {
-  color: rgba(255, 255, 255, 0.658); /* Smoky white color for placeholder text */
+.post-search-bar::placeholder {
+  color: rgba(255, 255, 255, 0.658);
+  
 }
 
-/* Adjust color of input text when focused */
-.search-bar:focus {
-  color: rgba(255, 255, 255, 0.9); /* Lighter smoky white color when focused */
+.post-search-bar:focus {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .posts-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-columns: repeat(4, 1fr);
   margin: 0 auto;
 }
 
 .post {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px; /* Adjusted margin */
-  /*display: flex;*/
-  flex-direction: column;
-  align-items: center;
-  background-color: #e4dede; /* Light gray background */
-  box-shadow: 0px 2px 5px rgba(27, 27, 27, 0.1); /* Subtle shadow */
-  max-width: 400px; /* Adjusted maximum width */
-  max-height: 550px; /* Adjusted maximum height */
-  overflow: auto; /* Removed auto overflow */
+  border-radius: 10px; /* More rounded corners for post cards */
+  padding: 15px; /* Increase padding for more space inside cards */
+  margin: 15px; /* Increase margin for more space between cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #e4dede;
 }
-
 
 .post h2 {
   margin-top: 5px;
+  font-size: 20px;
   text-align: center;
   margin-bottom: 5px;
 }
 
-/* Align post details to the left */
 .post p.details {
   text-align: left;
   font-size: 14px;
-  margin-top: 5px; /* Increase margin for better separation */
+  margin-top: 5px;
   margin-left: 5px;
-  
 }
 
-/* Align post payment to the right */
 .post p.payment {
-  margin-bottom: 10px; /* Increase margin for better separation */
-  margin-left: 5px; /* Pushes the payment to the right */
+  margin-bottom: 2px;
+  margin-left: 5px;
   font-size: 14px;
 }
 
-/* Align post date to the left */
 .post p.date {
-  margin-bottom: 10px; /* Increase margin for better separation */
-  margin-right: 5px; /* Pushes the date to the left */
+  margin-bottom: 2px;
+  margin-right: 5px;
   font-size: 14px;
 }
 
 .payment-date-container {
   display: flex;
-  justify-content: space-between; /* Distribute space between children */
-  width: 100%; /* Full width of container */
-  align-items:last baseline;
-  
+  justify-content: space-between;
+  width: 100%;
 }
-.post p.username {
+
+.post .username {
   text-align: left;
-  font-size: 16px;
-  margin-top: 5px; /* Increase margin for better separation */
+  font-size: 14px;
+  margin-top: 2px;
   margin-left: 5px;
 }
-.post p.netid {
+
+.post .netid {
   text-align: right;
-  font-size: 16px;
-  margin-top: 5px; /* Increase margin for better separation */
+  font-size: 14px;
+  margin-top: 2px;
   margin-right: 5px;
 }
+
 .username-netid {
   display: flex;
-  justify-content: space-between; /* Distribute space between children */
-  width: 100%; /* Full width of container */
-  align-items:last baseline;
-  
+  justify-content: space-between;
+  width: 100%;
 }
+
 .post img {
-  max-width: 380px; /* Maximum width */
-  max-height: 400px; /* Maximum height */
-  width: 100%; /* Take up full width */
-  height: 200px; /* Maintain aspect ratio */
+  max-width: 380px;
+  max-height: 400px;
+  width: 100%;
+  height: 200px;
   border-radius: 10px;
-  align-self: center; /* Center image horizontally */
+  align-self: center;
   object-fit: contain;
 }
 
-/* Center the title */
 h1 {
-  font-size: 44px;
+  font-size: 45px;
   text-align: center;
 }
 
-/* Adjust title size based on window width */
 @media screen and (max-width: 768px) {
-  h1 {
-    font-size: 20px; /* Adjust font size for smaller screens */
+  .posts-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
   }
 }
 
 @media screen and (max-width: 480px) {
-  h1 {
-    font-size: 10px; /* Adjust font size for even smaller screens */
+  .posts-container {
+    grid-template-columns: 1fr; /* Single column for very small screens */
+  }
+  .post-search-bar {
+    width: 80%; /* Wider search bar on small screens */
+    margin-left: 10%; /* Center search bar with margin */
   }
 }
-.selection-circle {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: gray;
-  margin-bottom: 10px;
+
+
+.post .progress-bar-container {
+    width: 100%; /* Full width progress bar container */
+    padding: 5px; /* Padding around the progress bar */
+    background-color: #939191; /* Light background for the progress bar container */
+    border-radius: 10px; /* Rounded corners for the container */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
 }
 
-.progress-bar-container {
-  background-color: gray;
-  height: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
 
-.progress-bar {
+.post .progress-bar {
+    position: relative;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+  }
+
+
+.post .progress-bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
-  background-color: cyan;
+  background-color: #2ecc71;
+  border-radius: 10px;
+  transition: width 0.5s ease-out;
+}
+
+ .post .progress-bar-label{
+  margin-top: 2px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-align: right;
+  margin-right: auto;
+ }
+
+ .post-button-container button {
+  padding: 5px 10px; /* Smaller padding for smaller buttons */
+  font-size: 14px;
+  margin: 3px;
+  margin-bottom: 5px;
+  border: none; /* Remove border for a cleaner look */
+  border-radius: 5px; /* Rounded corners for buttons */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s; /* Smooth background color transition on hover */
+  background-color: #007bff;
+  color: white;
+  }
+
+.post-button-container button:hover {
+  background-color: #b5b3b3; /* Slight background change on hover for better user interaction */
+}
+.post .post-button-container {
+  width: 100%; /* Take the full width of the parent container */
+  display: flex; /* Use flexbox to align buttons */
+  justify-content: center; /* Center buttons horizontally */
+  flex-wrap: wrap; /* Wrap buttons to next line if space is insufficient */
 }

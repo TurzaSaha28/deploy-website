@@ -12,10 +12,11 @@ form {
   align-items: center;
 }
 
-h1 {
+.sign-up-container h1 {
   font-size: 34px;
 }
 
+.sign-up-container
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -27,7 +28,7 @@ input[type="password"] {
   font-size: 16px;
 }
 
-button {
+.sign-up-container button {
   width: 150px;
   padding: 10px;
   margin: 5px;
@@ -39,7 +40,7 @@ button {
   color: white;
 }
 
-button:hover {
+.sign-up-container button:hover {
   background-color: #0056b3;
 }
 
